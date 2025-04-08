@@ -19,10 +19,10 @@ body {
     display: flex;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.9);
-    padding: 35px 0;
+    padding: 15px 40px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     z-index: 1000;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    box-sizing: border-box;
 }
 
 .logo-container {
@@ -44,8 +44,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1600px; /* Igualamos el ancho máximo al resto de las secciones */
-    margin: 0 auto; /* Centramos el menú dentro del contenedor */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .menu-toggle {
@@ -212,6 +212,17 @@ footer {
     color: #FFC107;
     font-weight: 400;
     font-size: 18px;
+    margin: 0;
+}
+
+.footer-item a {
+    color: #FFC107;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-item a:hover {
+    color: white;
 }
 
 /* Responsividad */
@@ -240,7 +251,7 @@ footer {
         width: 100%;
         position: relative;
         justify-content: flex-end;
-        max-width: none; /* En móviles, el menú ocupa todo el ancho */
+        max-width: none;
         margin: 0;
     }
 
