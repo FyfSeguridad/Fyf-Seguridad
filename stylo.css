@@ -1,0 +1,381 @@
+/* Hacer que el banner sea el fondo de toda la página */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('Firma.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: #FFC107;
+    text-align: center;
+    margin: 0;
+    scroll-behavior: smooth;
+    padding-top: 130px;
+}
+
+/* Encabezado fijo */
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 35px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.logo-container {
+    position: absolute;
+    left: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    margin-bottom: -10px;
+}
+
+/* Menú de navegación */
+.menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1600px; /* Igualamos el ancho máximo al resto de las secciones */
+    margin: 0 auto; /* Centramos el menú dentro del contenedor */
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: #FFC107;
+    cursor: pointer;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-list li {
+    display: inline-block;
+}
+
+.menu-list a {
+    color: #FFC107;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.menu-list a:hover {
+    color: white;
+}
+
+/* Sección de presentación */
+.presentacion {
+    position: relative;
+    margin: 60px auto;
+    max-width: 1200px;
+    height: 600px;
+    background: url('img/instalacion-cerco.jpg') no-repeat center center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Filtro oscuro sobre la imagen para mejorar la legibilidad del texto */
+.presentacion::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.presentacion-contenido {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.presentacion-contenido p {
+    font-size: 20px;
+    color: #FFC107;
+    font-weight: 400;
+    line-height: 1.8;
+    margin: 0;
+    text-align: justify;
+}
+
+/* Sección de servicios */
+.servicios {
+    margin: 40px auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    color: #FFC107;
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* Grid de servicios */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.servicio-item {
+    text-align: center;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.servicio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.servicio-item h3 {
+    color: #FFC107;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 15px 0;
+}
+
+.servicio-item p {
+    color: #FFC107;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Pie de página */
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-item i {
+    color: #FFC107;
+    font-size: 28px;
+}
+
+.footer-item p {
+    color: #FFC107;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    body {
+        padding-top: 180px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        padding: 10px 20px;
+        align-items: flex-start;
+    }
+
+    .logo-container {
+        position: static;
+        margin-right: 0;
+    }
+
+    .logo {
+        height: 80px;
+        margin-bottom: 0;
+    }
+
+    .menu {
+        width: 100%;
+        position: relative;
+        justify-content: flex-end;
+        max-width: none; /* En móviles, el menú ocupa todo el ancho */
+        margin: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .menu-list {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 40px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .menu-list.active {
+        display: flex;
+    }
+
+    .menu-list li {
+        padding: 5px 20px;
+    }
+
+    .menu-list a {
+        font-size: 20px;
+    }
+
+    .presentacion {
+        margin: 30px 20px;
+        padding: 20px;
+        height: 500px;
+    }
+
+    .presentacion-contenido {
+        padding: 20px;
+    }
+
+    .presentacion-contenido p {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .servicios {
+        margin: 30px 20px;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .servicio-item {
+        padding: 15px;
+    }
+
+    .servicio-item img {
+        height: 200px;
+    }
+
+    .servicio-item h3 {
+        font-size: 20px;
+    }
+
+    .servicio-item p {
+        font-size: 14px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-item i {
+        font-size: 24px;
+    }
+
+    .footer-item p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 160px;
+    }
+
+    .logo {
+        height: 60px;
+    }
+
+    .servicios {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    .menu-list a {
+        font-size: 18px;
+    }
+
+    .presentacion {
+        margin: 20px 10px;
+        padding: 15px;
+        height: 400px;
+    }
+
+    .presentacion-contenido {
+        padding: 15px;
+    }
+
+    .presentacion-contenido p {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .servicio-item img {
+        height: 180px;
+    }
+
+    .servicio-item h3 {
+        font-size: 18px;
+    }
+}
