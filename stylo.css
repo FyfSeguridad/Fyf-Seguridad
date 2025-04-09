@@ -159,8 +159,8 @@ h2 {
 
 .servicio-item img {
     width: 100%;
-    height: 250px; /* Altura fija para todas las imágenes */
-    object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
+    height: 120px;
+    object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -235,6 +235,7 @@ footer {
         flex-direction: column;
         padding: 10px 20px;
         align-items: flex-start;
+        position: relative; /* Añadimos position: relative para que menu-toggle se posicione en relación con header-container */
     }
 
     .logo-container {
@@ -249,24 +250,24 @@ footer {
 
     .menu {
         width: 100%;
-        position: relative;
-        justify-content: flex-end;
         max-width: none;
         margin: 0;
+        position: static; /* Cambiamos a static para que no interfiera con la posición del menu-toggle */
     }
 
     .menu-toggle {
         display: block;
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 20px; /* Ajustamos la posición vertical para que coincida con el logo */
+        right: 20px; /* Lo mantenemos a la derecha */
+        line-height: 80px; /* Alineamos verticalmente con el logo */
     }
 
     .menu-list {
         display: none;
         flex-direction: column;
         gap: 15px;
-        margin-top: 40px;
+        margin-top: 90px; /* Ajustamos el margen superior para que el menú desplegable no se superponga con el logo */
         width: 100%;
         background-color: rgba(0, 0, 0, 0.9);
         padding: 15px 0;
@@ -320,7 +321,7 @@ footer {
     }
 
     .servicio-item img {
-        height: 200px; /* Altura ajustada para móviles */
+        height: 100px;
     }
 
     .servicio-item h3 {
@@ -377,13 +378,22 @@ footer {
         font-size: 16px;
     }
 
+    .menu-toggle {
+        top: 15px; /* Ajustamos para pantallas más pequeñas */
+        line-height: 60px; /* Alineamos con la altura del logo */
+    }
+
+    .menu-list {
+        margin-top: 70px; /* Ajustamos el margen superior para pantallas más pequeñas */
+    }
+
     h2 {
         font-size: 24px;
         margin-bottom: 20px;
     }
 
     .servicio-item img {
-        height: 180px; /* Altura ajustada para pantallas más pequeñas */
+        height: 90px;
     }
 
     .servicio-item h3 {
