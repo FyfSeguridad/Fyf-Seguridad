@@ -311,7 +311,7 @@ footer {
     }
 
     .servicios-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Una columna en móviles */
         gap: 20px;
     }
 
