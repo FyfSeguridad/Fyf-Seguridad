@@ -159,7 +159,7 @@ h2 {
 
 .servicio-item img {
     width: 100%;
-    height: 120px;
+    height: 150px; /* Altura predeterminada para pantallas grandes (computadora) */
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -232,15 +232,16 @@ footer {
     }
 
     .header-container {
-        flex-direction: column;
+        flex-direction: row; /* Cambiamos a row para alinear el logo y el menu-toggle en la misma línea */
         padding: 10px 20px;
-        align-items: flex-start;
-        position: relative; /* Añadimos position: relative para que menu-toggle se posicione en relación con header-container */
+        align-items: center; /* Alineamos verticalmente */
+        position: relative;
     }
 
     .logo-container {
         position: static;
         margin-right: 0;
+        flex: 1; /* Permitimos que el logo ocupe el espacio disponible */
     }
 
     .logo {
@@ -249,29 +250,30 @@ footer {
     }
 
     .menu {
-        width: 100%;
+        width: auto; /* Reducimos el ancho para que solo contenga el menu-toggle */
         max-width: none;
         margin: 0;
-        position: static; /* Cambiamos a static para que no interfiera con la posición del menu-toggle */
+        position: static;
     }
 
     .menu-toggle {
         display: block;
-        position: absolute;
-        top: 20px; /* Ajustamos la posición vertical para que coincida con el logo */
-        right: 20px; /* Lo mantenemos a la derecha */
-        line-height: 80px; /* Alineamos verticalmente con el logo */
+        position: static; /* Cambiamos a static para que se alinee naturalmente con el logo */
+        margin-left: auto; /* Lo empujamos a la derecha */
     }
 
     .menu-list {
         display: none;
         flex-direction: column;
         gap: 15px;
-        margin-top: 90px; /* Ajustamos el margen superior para que el menú desplegable no se superponga con el logo */
+        margin-top: 90px;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.9);
         padding: 15px 0;
         text-align: center;
+        position: absolute;
+        top: 100%; /* Lo colocamos justo debajo del header */
+        left: 0;
     }
 
     .menu-list.active {
@@ -321,7 +323,7 @@ footer {
     }
 
     .servicio-item img {
-        height: 100px;
+        height: 120px; /* Reducimos la altura solo en móviles */
     }
 
     .servicio-item h3 {
@@ -378,13 +380,8 @@ footer {
         font-size: 16px;
     }
 
-    .menu-toggle {
-        top: 15px; /* Ajustamos para pantallas más pequeñas */
-        line-height: 60px; /* Alineamos con la altura del logo */
-    }
-
     .menu-list {
-        margin-top: 70px; /* Ajustamos el margen superior para pantallas más pequeñas */
+        margin-top: 70px;
     }
 
     h2 {
